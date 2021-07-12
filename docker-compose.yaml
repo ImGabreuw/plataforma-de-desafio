@@ -1,0 +1,17 @@
+version: "3"
+
+volumes:
+  pgdata:
+
+services:
+  postgres:
+    image: postgres:13
+    restart: always
+    tty: true
+    volumes:
+    - pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=plataforma_de_desafios
+    ports:
+    - "5432:5432"
